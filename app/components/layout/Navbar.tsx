@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPaw, FaBars, FaTimes } from "react-icons/fa";
+import { FaPaw, FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,21 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      setDarkMode(true);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    document.body.classList.toggle("dark-mode", newMode);
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+  };
 
   return (
     <motion.nav
@@ -73,10 +89,24 @@ const Navbar = () => {
               </motion.span>
             </Link>
           ))}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleDarkMode}
+            className="text-[#6b3e26] p-2"
+          >
+            {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+          </motion.button>
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleDarkMode}
+            className="text-[#6b3e26] p-2"
+          >
+            {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+          </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
@@ -111,6 +141,13 @@ const Navbar = () => {
                 </motion.span>
               </Link>
             ))}
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleDarkMode}
+              className="self-start text-[#6b3e26] p-2"
+            >
+              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </motion.button>
           </div>
         </motion.div>
       )}
