@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#6b3e26] text-white py-12">
+    <footer className="bg-[#6b3e26] dark:bg-[#1a1a1a] text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -115,7 +115,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-3 py-2 text-black rounded-l-md focus:outline-none text-sm w-full"
+                className="px-3 py-2 text-black dark:text-white dark:bg-[#333] rounded-l-md focus:outline-none text-sm w-full"
               />
               <button className="bg-[#ff6b6b] px-3 py-2 rounded-r-md hover:bg-[#ff8c8c] transition-colors">
                 Subscribe
