@@ -126,7 +126,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
           <p>
-            © 2025 Meow Meow. All rights reserved. Made with{" "}
+            © {new Date().getFullYear()} Meow Meow. All rights reserved. Made with{" "}
             <FaHeart className="inline text-[#ff6b6b]" /> for cats everywhere.
           </p>
         </div>
