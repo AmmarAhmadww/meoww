@@ -283,7 +283,7 @@ export default function Home() {
       </section>
       
       {/* Cat Breeds Showcase */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#fffaf0] px-4">
+      <section className="py-20 bg-gradient-to-b from-white to-[#fffaf0] dark:from-[#0e0e0e] dark:to-[#1a1a1a] px-4">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
