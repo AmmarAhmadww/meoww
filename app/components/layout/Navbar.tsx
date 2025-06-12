@@ -36,7 +36,11 @@ const Navbar = () => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme === "dark") {
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
+      document.body.classList.add("dark-mode", "dark");
+=======
       document.body.classList.add("dark-mode");
+>>>>>>> main
       setDarkMode(true);
     }
   }, []);
@@ -45,6 +49,10 @@ const Navbar = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
     document.body.classList.toggle("dark-mode", newMode);
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
+    document.body.classList.toggle("dark", newMode);
+=======
+>>>>>>> main
     localStorage.setItem("theme", newMode ? "dark" : "light");
   };
 
@@ -55,7 +63,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg py-2"
+          ? "bg-white/90 dark:bg-[#1a1a1a]/90 backdrop-blur-md shadow-lg py-2"
           : "bg-transparent py-4"
       }`}
     >
@@ -69,7 +77,7 @@ const Navbar = () => {
             <FaPaw size={28} />
           </motion.div>
           <motion.span
-            className="text-2xl font-bold text-[#6b3e26]"
+            className="text-2xl font-bold text-[#6b3e26] dark:text-[#ededed]"
             whileHover={{ scale: 1.05 }}
           >
             Meow Meow
@@ -81,7 +89,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <motion.span
-                className="text-[#6b3e26] hover:text-[#ff6b6b] font-medium transition-colors"
+                className="text-[#6b3e26] dark:text-[#ededed] hover:text-[#ff6b6b] font-medium transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -92,7 +100,11 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
+            className="text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
             className="text-[#6b3e26] p-2"
+>>>>>>> main
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </motion.button>
@@ -103,14 +115,18 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
+            className="text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
             className="text-[#6b3e26] p-2"
+>>>>>>> main
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="text-[#6b3e26] p-2"
+            className="text-[#6b3e26] dark:text-[#ededed] p-2"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </motion.button>
@@ -124,7 +140,7 @@ const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-white shadow-lg"
+          className="md:hidden bg-white dark:bg-[#1a1a1a] shadow-lg"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
@@ -135,7 +151,7 @@ const Navbar = () => {
               >
                 <motion.span
                   whileHover={{ x: 5 }}
-                  className="block py-2 text-[#6b3e26] hover:text-[#ff6b6b] font-medium transition-colors"
+                  className="block py-2 text-[#6b3e26] dark:text-[#ededed] hover:text-[#ff6b6b] font-medium transition-colors"
                 >
                   {link.label}
                 </motion.span>
@@ -144,7 +160,11 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
+              className="self-start text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
               className="self-start text-[#6b3e26] p-2"
+>>>>>>> main
             >
               {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </motion.button>
