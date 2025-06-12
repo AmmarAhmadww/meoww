@@ -99,7 +99,7 @@ export default function Home() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#fffaf0] to-[#fff5e6] px-4 py-20">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#fffaf0] to-[#fff5e6] dark:from-[#0e0e0e] dark:to-[#1a1a1a] px-4 py-20">
         <div className="container mx-auto text-center z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -135,8 +135,8 @@ export default function Home() {
                 <FaHeart size={24} />
               </motion.div>
             </div>
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold text-[#6b3e26] mb-4"
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-4"
               animate={{ 
                 y: [0, -10, 0],
               }}
@@ -148,8 +148,8 @@ export default function Home() {
             >
               Meow Meow
             </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-[#8d6e63] max-w-2xl mx-auto"
+            <motion.p
+              className="text-xl md:text-2xl text-[#8d6e63] dark:text-[#cccccc] max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -176,7 +176,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/cat-care" className="inline-block bg-white text-[#6b3e26] border-2 border-[#6b3e26] px-8 py-3 rounded-full font-medium shadow-lg hover:bg-[#6b3e26] hover:text-white transition-colors">
+              <Link href="/cat-care" className="inline-block bg-white dark:bg-[#333] text-[#6b3e26] dark:text-[#ededed] border-2 border-[#6b3e26] dark:border-[#ededed] px-8 py-3 rounded-full font-medium shadow-lg hover:bg-[#6b3e26] hover:text-white transition-colors">
                 Cat Care Tips
               </Link>
             </motion.div>
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
       
       {/* Features Section */}
-      <section ref={ref} className="py-20 bg-white px-4">
+      <section ref={ref} className="py-20 bg-white dark:bg-[#121212] px-4">
         <div className="container mx-auto">
           <motion.div
             variants={fadeIn}
@@ -223,8 +223,8 @@ export default function Home() {
             animate={controls}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#6b3e26] mb-4">Why Cats Are Amazing</h2>
-            <p className="text-lg text-[#8d6e63] max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-4">Why Cats Are Amazing</h2>
+            <p className="text-lg text-[#8d6e63] dark:text-[#cccccc] max-w-2xl mx-auto">
               Cats bring joy, companionship, and endless entertainment to our lives. Here&apos;s why they make the perfect pets.
             </p>
           </motion.div>
@@ -271,11 +271,11 @@ export default function Home() {
                 key={index}
                 variants={catCardVariants}
                 whileHover="hover"
-                className="bg-[#fffaf0] p-6 rounded-xl shadow-md"
+                className="bg-[#fffaf0] dark:bg-[#1a1a1a] p-6 rounded-xl shadow-md"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#6b3e26] mb-2">{feature.title}</h3>
-                <p className="text-[#8d6e63]">{feature.description}</p>
+                <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-2">{feature.title}</h3>
+                <p className="text-[#8d6e63] dark:text-[#cccccc]">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -292,8 +292,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#6b3e26] mb-4">Popular Cat Breeds</h2>
-            <p className="text-lg text-[#8d6e63] max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-4">Popular Cat Breeds</h2>
+            <p className="text-lg text-[#8d6e63] dark:text-[#cccccc] max-w-2xl mx-auto">
               From fluffy Maine Coons to sleek Siamese, explore some of the most beloved cat breeds.
             </p>
           </motion.div>
@@ -344,11 +344,11 @@ export default function Home() {
                 style={{ backgroundColor: breed.color }}
                 className="rounded-xl p-6 shadow-md"
               >
-                <div className="h-40 bg-white rounded-lg mb-4 flex items-center justify-center">
+                <div className="h-40 bg-white dark:bg-[#333] rounded-lg mb-4 flex items-center justify-center">
                   <div className="text-6xl">😺</div>
                 </div>
-                <h3 className="text-xl font-bold text-[#6b3e26] mb-2">{breed.name}</h3>
-                <p className="text-[#8d6e63]">{breed.description}</p>
+                <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-2">{breed.name}</h3>
+                <p className="text-[#8d6e63] dark:text-[#cccccc]">{breed.description}</p>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -363,7 +363,7 @@ export default function Home() {
       </section>
       
       {/* Newsletter Section */}
-      <section className="py-20 bg-[#6b3e26] text-white px-4">
+      <section className="py-20 bg-[#6b3e26] dark:bg-[#1a1a1a] text-white px-4">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
@@ -417,7 +417,7 @@ export default function Home() {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="flex-grow px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-[#6b3e26]"
+                  className="flex-grow px-4 py-3 rounded-lg text-black dark:text-white dark:bg-[#333] focus:outline-none focus:ring-2 focus:ring-[#6b3e26]"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -433,7 +433,7 @@ export default function Home() {
       </section>
       
       {/* Call to Action */}
-      <section className="py-20 bg-white px-4">
+      <section className="py-20 bg-white dark:bg-[#121212] px-4">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -442,8 +442,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-[#6b3e26] mb-6">Ready to Dive Into the World of Cats?</h2>
-            <p className="text-lg text-[#8d6e63] mb-8">
+            <h2 className="text-4xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-6">Ready to Dive Into the World of Cats?</h2>
+            <p className="text-lg text-[#8d6e63] dark:text-[#cccccc] mb-8">
               Explore our comprehensive resources, join our community, and enhance your bond with your feline friend.
             </p>
             <motion.div

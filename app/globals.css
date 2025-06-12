@@ -21,7 +21,8 @@
 }
 
 /* Explicit dark mode class */
-body.dark-mode {
+body.dark-mode,
+body.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
 }
