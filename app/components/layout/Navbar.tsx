@@ -35,6 +35,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
+
     if (storedTheme) {
       const isDark = storedTheme === "dark";
       document.body.classList.toggle("dark-mode", isDark);
@@ -42,6 +43,11 @@ const Navbar = () => {
       setDarkMode(isDark);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.body.classList.add("dark-mode", "dark");
+
+    if (storedTheme === "dark") {
+
+      document.body.classList.add("dark-mode", "dark");
+
       setDarkMode(true);
     }
   }, []);
@@ -50,7 +56,11 @@ const Navbar = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
     document.body.classList.toggle("dark-mode", newMode);
+
     document.body.classList.toggle("dark", newMode);
+
+    document.body.classList.toggle("dark", newMode);
+
     localStorage.setItem("theme", newMode ? "dark" : "light");
   };
 
@@ -98,7 +108,13 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
+
             className="text-[#6b3e26] dark:text-[#ededed] p-2"
+
+            className="text-[#6b3e26] dark:text-[#ededed] p-2"
+
+            className="text-[#6b3e26] p-2"
+
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </motion.button>
@@ -106,6 +122,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center gap-2">
+
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
@@ -115,6 +132,19 @@ const Navbar = () => {
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
+
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleDarkMode}
+
+            className="text-[#6b3e26] dark:text-[#ededed] p-2"
+
+          >
+            {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+
             onClick={() => setIsOpen(!isOpen)}
             className="text-[#6b3e26] dark:text-[#ededed] p-2"
           >
@@ -150,7 +180,11 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
+
               className="self-start text-[#6b3e26] dark:text-[#ededed] p-2"
+
+              className="self-start text-[#6b3e26] dark:text-[#ededed] p-2"
+
             >
               {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </motion.button>
