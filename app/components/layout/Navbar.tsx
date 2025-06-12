@@ -36,7 +36,11 @@ const Navbar = () => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme === "dark") {
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
       document.body.classList.add("dark-mode", "dark");
+=======
+      document.body.classList.add("dark-mode");
+>>>>>>> main
       setDarkMode(true);
     }
   }, []);
@@ -45,7 +49,10 @@ const Navbar = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
     document.body.classList.toggle("dark-mode", newMode);
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
     document.body.classList.toggle("dark", newMode);
+=======
+>>>>>>> main
     localStorage.setItem("theme", newMode ? "dark" : "light");
   };
 
@@ -93,7 +100,11 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
             className="text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
+            className="text-[#6b3e26] p-2"
+>>>>>>> main
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </motion.button>
@@ -104,7 +115,11 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
             className="text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
+            className="text-[#6b3e26] p-2"
+>>>>>>> main
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
           </motion.button>
@@ -145,7 +160,11 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
+<<<<<<< 7xq4sc-codex/code-new-features-and-create-pr
               className="self-start text-[#6b3e26] dark:text-[#ededed] p-2"
+=======
+              className="self-start text-[#6b3e26] p-2"
+>>>>>>> main
             >
               {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </motion.button>
