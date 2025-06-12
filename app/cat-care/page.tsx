@@ -155,7 +155,7 @@ export default function CatCare() {
   };
 
   return (
-    <div className="bg-[#fffaf0] min-h-screen pt-32 pb-20">
+    <div className="bg-[#fffaf0] dark:bg-[#0e0e0e] min-h-screen pt-32 pb-20">
       {/* Hero Section */}
       <section className="relative px-4 mb-20">
         <div className="container mx-auto">
@@ -165,10 +165,10 @@ export default function CatCare() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-[#6b3e26] mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-6">
               Cat Care Guide
             </h1>
-            <p className="text-xl text-[#8d6e63] max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#8d6e63] dark:text-[#cccccc] max-w-3xl mx-auto mb-8">
               Everything you need to know to keep your feline friend happy and healthy.
             </p>
             <motion.div
@@ -184,7 +184,7 @@ export default function CatCare() {
                 className={`px-6 py-3 rounded-full font-medium ${
                   activeCategory === "all"
                     ? "bg-[#ff6b6b] text-white"
-                    : "bg-white text-[#6b3e26] border border-[#6b3e26]"
+                    : "bg-white dark:bg-[#333] text-[#6b3e26] dark:text-[#ededed] border border-[#6b3e26] dark:border-[#ededed]"
                 } transition-colors`}
               >
                 All Tips
@@ -198,7 +198,7 @@ export default function CatCare() {
                   className={`px-6 py-3 rounded-full font-medium ${
                     activeCategory === category
                       ? "bg-[#ff6b6b] text-white"
-                      : "bg-white text-[#6b3e26] border border-[#6b3e26]"
+                      : "bg-white dark:bg-[#333] text-[#6b3e26] dark:text-[#ededed] border border-[#6b3e26] dark:border-[#ededed]"
                   } transition-colors`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -231,11 +231,11 @@ export default function CatCare() {
               >
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">{tip.icon}</div>
-                  <h3 className="text-xl font-bold text-[#6b3e26]">{tip.title}</h3>
+                  <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed]">{tip.title}</h3>
                 </div>
-                <p className="text-[#8d6e63] mb-4">{tip.description}</p>
+                <p className="text-[#8d6e63] dark:text-[#cccccc] mb-4">{tip.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm px-3 py-1 bg-white/50 rounded-full text-[#8d6e63]">
+                  <span className="text-sm px-3 py-1 bg-white/50 dark:bg-[#333]/50 rounded-full text-[#8d6e63] dark:text-[#cccccc]">
                     {tip.category.charAt(0).toUpperCase() + tip.category.slice(1)}
                   </span>
                   <motion.button
@@ -253,7 +253,7 @@ export default function CatCare() {
       </section>
       
       {/* FAQ Section */}
-      <section className="px-4 mb-20 bg-white py-20">
+      <section className="px-4 mb-20 bg-white dark:bg-[#121212] py-20">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -261,10 +261,10 @@ export default function CatCare() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-[#6b3e26] mb-4">
+            <h2 className="text-4xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-[#8d6e63] max-w-2xl mx-auto">
+            <p className="text-lg text-[#8d6e63] dark:text-[#cccccc] max-w-2xl mx-auto">
               Get answers to common questions about cat care.
             </p>
           </motion.div>
@@ -286,11 +286,11 @@ export default function CatCare() {
                   onClick={() => toggleFaq(index)}
                   className="w-full p-6 text-left flex justify-between items-center"
                 >
-                  <h3 className="text-lg font-medium text-[#6b3e26] flex items-center">
+                  <h3 className="text-lg font-medium text-[#6b3e26] dark:text-[#ededed] flex items-center">
                     <FaQuestion className="text-[#ff6b6b] mr-3" />
                     {faq.question}
                   </h3>
-                  <span className="text-[#8d6e63]">
+                  <span className="text-[#8d6e63] dark:text-[#cccccc]">
                     {activeFaq === index ? "−" : "+"}
                   </span>
                 </motion.button>
@@ -304,7 +304,7 @@ export default function CatCare() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 pt-0 text-[#8d6e63]">
+                  <div className="p-6 pt-0 text-[#8d6e63] dark:text-[#cccccc]">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -413,18 +413,18 @@ export default function CatCare() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-[#6b3e26] mb-6">Additional Resources</h2>
-            <p className="text-lg text-[#8d6e63] mb-8">
+            <h2 className="text-4xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-6">Additional Resources</h2>
+            <p className="text-lg text-[#8d6e63] dark:text-[#cccccc] mb-8">
               Explore these helpful resources to learn more about cat care and behavior.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
                 whileHover={{ y: -10, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-                className="bg-white p-6 rounded-xl shadow-md"
+                className="bg-white dark:bg-[#1a1a1a] p-6 rounded-xl shadow-md"
               >
                 <div className="text-4xl mb-4">📚</div>
-                <h3 className="text-xl font-bold text-[#6b3e26] mb-2">Books</h3>
-                <p className="text-[#8d6e63] mb-4">Recommended reading for cat owners.</p>
+                <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-2">Books</h3>
+                <p className="text-[#8d6e63] dark:text-[#cccccc] mb-4">Recommended reading for cat owners.</p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -436,11 +436,11 @@ export default function CatCare() {
               
               <motion.div
                 whileHover={{ y: -10, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-                className="bg-white p-6 rounded-xl shadow-md"
+                className="bg-white dark:bg-[#1a1a1a] p-6 rounded-xl shadow-md"
               >
                 <div className="text-4xl mb-4">🎬</div>
-                <h3 className="text-xl font-bold text-[#6b3e26] mb-2">Videos</h3>
-                <p className="text-[#8d6e63] mb-4">Helpful tutorials and demonstrations.</p>
+                <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-2">Videos</h3>
+                <p className="text-[#8d6e63] dark:text-[#cccccc] mb-4">Helpful tutorials and demonstrations.</p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -452,11 +452,11 @@ export default function CatCare() {
               
               <motion.div
                 whileHover={{ y: -10, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-                className="bg-white p-6 rounded-xl shadow-md"
+                className="bg-white dark:bg-[#1a1a1a] p-6 rounded-xl shadow-md"
               >
                 <div className="text-4xl mb-4">👨‍⚕️</div>
-                <h3 className="text-xl font-bold text-[#6b3e26] mb-2">Experts</h3>
-                <p className="text-[#8d6e63] mb-4">Connect with veterinarians and behaviorists.</p>
+                <h3 className="text-xl font-bold text-[#6b3e26] dark:text-[#ededed] mb-2">Experts</h3>
+                <p className="text-[#8d6e63] dark:text-[#cccccc] mb-4">Connect with veterinarians and behaviorists.</p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
