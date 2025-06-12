@@ -34,12 +34,14 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    const root = document.documentElement;
     const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) {
-      const isDark = storedTheme === "dark";
-      document.body.classList.toggle("dark-mode", isDark);
-      document.body.classList.toggle("dark", isDark);
+      root.classList.toggle("dark-mode", isDark);
+      root.classList.toggle("dark", isDark);
+      root.classList.add("dark-mode", "dark");
+    const root = document.documentElement;
+    root.classList.toggle("dark-mode", newMode);
+    root.classList.toggle("dark", newMode);
       setDarkMode(isDark);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.body.classList.add("dark-mode", "dark");
