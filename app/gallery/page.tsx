@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPaw, FaSearch, FaHeart } from "react-icons/fa";
+import { FaPaw, FaSearch, FaHeart, FaRegHeart } from "react-icons/fa";
 import React from "react";
 
 interface CatItem {
@@ -128,6 +128,27 @@ export default function Gallery() {
   const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCat, setSelectedCat] = useState<CatItem | null>(null);
+  const [favorites, setFavorites] = useState<number[]>([]);
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("catFavorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  const toggleFavorite = (catId: number) => {
+    setFavorites(prevFavorites => {
+      let updatedFavorites;
+      if (prevFavorites.includes(catId)) {
+        updatedFavorites = prevFavorites.filter(id => id !== catId);
+      } else {
+        updatedFavorites = [...prevFavorites, catId];
+      }
+      localStorage.setItem("catFavorites", JSON.stringify(updatedFavorites));
+      return updatedFavorites;
+    });
+  };
   
   const filteredCats = catGallery.filter(cat => {
     const matchesCategory = filter === "all" || cat.category === filter;
@@ -246,8 +267,9 @@ export default function Gallery() {
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       className="text-[#ff6b6b]"
+                      onClick={(e) => { e.stopPropagation(); toggleFavorite(cat.id); }}
                     >
-                      <FaHeart />
+                      {favorites.includes(cat.id) ? <FaHeart /> : <FaRegHeart />}
                     </motion.button>
                   </div>
                 </div>
